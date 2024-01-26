@@ -1,4 +1,3 @@
-// import "../../styles/step1.scss";
 export default function Step1() {
   return (
     <>
