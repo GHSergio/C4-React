@@ -4,7 +4,6 @@ import {
   SearchIcon,
   CartIcon,
   MoonIcon,
-  LogoIcon,
   ToggleIcon,
 } from "../assets/icons/FontAwesome";
 

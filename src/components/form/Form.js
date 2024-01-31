@@ -7,6 +7,7 @@ import ProgressControl from "./ProgressControl";
 import "../../styles/form.scss";
 
 const Form = () => {
+  //因為都需要step去做判斷,所以設置在父層
   const [step, setStep] = useState(1);
   // 對應每一個步驟的組件
   const steps = {
@@ -14,6 +15,7 @@ const Form = () => {
     2: <Step2 />,
     3: <Step3 />,
   };
+
   return (
     <div className="form-container" style={{ width: "50%" }}>
       <StepProgress step={step} />

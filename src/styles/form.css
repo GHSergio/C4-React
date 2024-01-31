@@ -401,8 +401,7 @@ section.register-container[data-phase="3"] .progress-group[data-phase=shipping] 
   gap: 5px;
   opacity: 0.5;
 }
-.step-progress .step-group-sub.active,
-.step-progress .step-group-sub.checked {
+.step-progress .step-group-sub.obvious {
   opacity: 1;
 }
 .step-progress .step-group-sub-icon {

@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { FormContext } from "./FormContext";
 export default function Step1() {
+  const { handleInputChange } = useContext(FormContext);
+
   return (
     <>
       <div className="step-content">
@@ -20,17 +24,32 @@ export default function Step1() {
               </div>
               <div className="input-group input-w-lg-3 input-w-sm-s2">
                 <div className="input-label">姓名</div>
-                <input type="text" placeholder="請輸入姓名" />
+                <input
+                  type="text"
+                  placeholder="請輸入姓名"
+                  name="name"
+                  onChange={handleInputChange}
+                />
               </div>
             </div>
             <div className="col col-12">
               <div className="input-group input-w-lg-2 input-w-sm-full">
                 <div className="input-label">電話</div>
-                <input type="tel" placeholder="請輸入行動電話" />
+                <input
+                  type="tel"
+                  placeholder="請輸入行動電話"
+                  name="tel"
+                  onChange={handleInputChange}
+                />
               </div>
               <div className="input-group input-w-lg-3 input-w-sm-full">
                 <div className="input-label">Email</div>
-                <input type="email" placeholder="請輸入電子郵件" />
+                <input
+                  type="email"
+                  placeholder="請輸入電子郵件"
+                  name="email"
+                  onChange={handleInputChange}
+                />
               </div>
             </div>
             <div className="col col-12">
@@ -74,7 +93,12 @@ export default function Step1() {
 
               <div className="input-group input-w-lg-4 input-w-sm-full">
                 <div className="input-label">地址</div>
-                <input type="text" placeholder="請輸入地址" />
+                <input
+                  type="text"
+                  placeholder="請輸入地址"
+                  name="address"
+                  onChange={handleInputChange}
+                />
               </div>
             </div>
           </section>

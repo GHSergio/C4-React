@@ -1,54 +1,12 @@
-import React, { useState } from "react";
 import RemoveCircleSharpIcon from "@mui/icons-material/RemoveCircleSharp";
 import AddCircleSharpIcon from "@mui/icons-material/AddCircleSharp";
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
 import "../styles/cart.scss";
 
 export default function Cart() {
-  let initialData = [
-    {
-      id: "1",
-      name: "貓咪罐罐",
-      img: "https://picsum.photos/300/300?text=1",
-      price: 100,
-      quantity: 2,
-    },
-    {
-      id: "2",
-      name: "貓咪干干",
-      img: "https://picsum.photos/300/300?text=2",
-      price: 200,
-      quantity: 1,
-    },
-  ];
-
-  const [data, setData] = useState(initialData);
-
-  const increaseHandler = (id) => {
-    setData(
-      data.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
-  };
-
-  const decreaseHandler = (id) => {
-    setData(
-      data.map((item) =>
-        item.id === id && item.quantity > 1
-          ? {
-              ...item,
-              quantity: item.quantity - 1,
-            }
-          : item
-      )
-    );
-  };
-
-  let totalPrice = data.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
-
+  const { data, increaseHandler, decreaseHandler, cartTotal } =
+    useContext(CartContext);
   return (
     <>
       <section className="cart-container ">
@@ -85,7 +43,7 @@ export default function Cart() {
         </section>
         <section className="cart-info total col col-12">
           <div className="text">小計</div>
-          <div className="price">${totalPrice}</div>
+          <div className="price">${cartTotal}</div>
         </section>
       </section>
     </>

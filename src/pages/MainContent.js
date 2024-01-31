@@ -2,6 +2,8 @@ import React from "react";
 import Form from "../components/form/Form";
 import Cart from "../components/Cart";
 import "../styles/mainContent.scss";
+import { CartProvider } from "../components/CartProvider";
+import { FormProvider } from "../components/form/FormProvider";
 
 const MainContent = () => {
   return (
@@ -14,8 +16,12 @@ const MainContent = () => {
         }}
       >
         <div className="main-container">
-          <Form />
-          <Cart />
+          <CartProvider>
+            <FormProvider>
+              <Form />
+            </FormProvider>
+            <Cart />
+          </CartProvider>
         </div>
       </div>
     </>
